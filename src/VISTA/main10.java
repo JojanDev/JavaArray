@@ -5,8 +5,6 @@ llamado FIB[100] los 50 primeros números de la serie Fibonacci.
 package VISTA;
 
 import MODELO.class10;
-import java.util.Arrays;
-import javax.swing.JOptionPane;
 
 /**
  *

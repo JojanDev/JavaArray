@@ -4,8 +4,6 @@
  */
 package MODELO;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author Propietario
