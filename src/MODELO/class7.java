@@ -25,7 +25,7 @@ public class class7 {
     //Metodo para agregar elementos a el vector Java
     public void agregarElementoJava(int posicion, String opcion){
         //Almacena segun la condicion
-        if (opcion.equals("si")) {
+        if (opcion.toLowerCase().equals("si")) {
             java[posicion] = "PERDIO";
         }else{
             java[posicion] = "GANO";
@@ -35,7 +35,7 @@ public class class7 {
     //Metodo para agregar elementos a el vector cSharp
     public void agregarElementoCsharp(int posicion, String opcion){
         //Almacena segun la condicion
-        if (opcion.equals("si")) {
+        if (opcion.toLowerCase().equals("si")) {
             cSharp[posicion] = "PERDIO";
         }else{
             cSharp[posicion] = "GANO";
@@ -54,18 +54,21 @@ public class class7 {
         java_cSharp = new String[aux];
         
         //Bucle para alamcenar estudiantes que perdieron ambas materias
+        int aux = 0;
         for (int i = 0; i < java_cSharp.length; i++) {
             //Recorremos todos los estudiantes
-            int aux = 0;
             while (aux < estudiantes.length){
-                
-            }
-            for (int j = 0; j < estudiantes.length; j++) {
                 //Condicion
-                if (java[j].equals("PERDIO") && cSharp[j].equals("PERDIO")) {
-                    java_cSharp[i] = estudiantes[j]; //Almacenamos el nombre
-                } 
+                if (java[aux].equals("PERDIO") && cSharp[aux].equals("PERDIO")) {
+                    java_cSharp[i] = estudiantes[aux]; //Almacenamos el nombre
+                    //Aumentamos uno en el contador
+                    aux++;
+                    //Rompemos el bucle si la condicion se cumple
+                    break;
+                }
+                aux++;
             }
         }
+
     }
 }

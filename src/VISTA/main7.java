@@ -57,10 +57,7 @@ public class main7 {
         }
         System.out.println("ESTUDIANTES QUE PERDIERON AMBAS MATERIAS: ");
         for (int i = 0; i < modelo.java_cSharp.length; i++) {
-            System.err.println(modelo.java_cSharp[i]);
+            System.out.println(modelo.java_cSharp[i]);
         }
-        
-        
     }
-    
 }

@@ -1,7 +1,5 @@
 /*
-4. Llenar dos vectores A y B de N elementos cada uno, sumar el elemento uno del vector A con el
-elemento uno del vector B y así sucesivamente hasta N, almacenar el resultado en un vector C, e
-imprimir los dos vectores y el vector resultante.
+6. Escriba un algoritmo que efectúe la suma y la resta de dos vectores de números reales.
  */
 package VISTA;
 
@@ -19,37 +17,40 @@ public class main6 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-                //Datos de entrada numeros, arrays, cantidad
+        //Datos de entrada, cantidad
         int cantidad;
+        int[] array1, array2;
         
-        class6 modelo = new class6(); //Se crea una instancia
+        class6 modelo =  new class6(); //Se crea una instancia
         
-        //Soliticamos la cantidad de numeros
-        cantidad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de numeros a ingrear en ambas listas: "));
-        //Declaramos y inicializamos las listas de numeros
-        int[] numerosA = new int[cantidad], 
-                numerosB = new int[cantidad], 
-                numerosC = new int[cantidad];
+        //Solicitamos la cantidad 
+        cantidad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de numero a ingresar: "));
         
-        //Bucle para
+        //Inicilizamos el array
+        array1 = modelo.inicializarArray(cantidad);
+        array2 = modelo.inicializarArray(cantidad);        
+        
+        //Bucle para ingresar todos los numeros
         for (int i = 0; i < cantidad; i++) {
-            //Se solicitan los datos
-            int numero = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero " + (i+1) + " para la lista 'A': "));
-            //Se almacena en la lista
-            numerosA[i] = numero;
-
-            //Se solicitan los datos            
-            numero = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero " + (i+1) + " para la lista 'B': "));
-            //Se almacena en la lista            
-            numerosB[i] = numero;
+            //Solicitamos el numero
+            int numero = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero " + (i+1)+ " del primer vector"));
+            //Se llama al metodo para añadir el elemento al array
+            array1 = modelo.agregarNumeros(i, numero, array1);
+            
+            //Solicitamos el numero
+            numero = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero " + (i+1)+ " del segundo vector"));
+            //Se llama al metodo para añadir el elemento al array
+            array2 = modelo.agregarNumeros(i, numero, array2);
         }
-        //Se llama al metodo y se envian los datos
-        numerosC = modelo.restarListas(numerosA, numerosB, numerosC);
         
-         //Se imprimen los resultados
-        JOptionPane.showMessageDialog(null,"LISTA A: " + Arrays.toString(numerosA) + "\n"
-                + "LISTA B: " + Arrays.toString(numerosB) + "\n"
-                        + "LISTA C: " + Arrays.toString(numerosC)); //Convertimos array a cadena de texto
+        //Se llama al metodo y se envian los datos
+        int[] arraySumas = modelo.sumarArrays(cantidad, array1, array2);
+        int[] arrayRestas = modelo.restarArrays(cantidad, array1, array2);        
+        
+        //Se imprimen los resultados
+        JOptionPane.showMessageDialog(null, "ARRAY 1: " + Arrays.toString(array1) + "\n"
+                + "ARRAY 2: " + Arrays.toString(array2) + "\n"
+                + "SUMA DE LOS ARRAYS: " + Arrays.toString(arraySumas) + "\n"
+                + "RESTA DE LOS ARRAYS: " + Arrays.toString(arrayRestas));
     }
-    
 }

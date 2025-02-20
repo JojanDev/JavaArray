@@ -1,8 +1,12 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+10. Diseñe un algoritmo que almacene en un vector
+llamado FIB[100] los 50 primeros números de la serie Fibonacci.
  */
 package VISTA;
+
+import MODELO.class10;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,7 +18,21 @@ public class main10 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //Datos de entrada, cantidad de numeros
+        int cantidad = 50;
+        
+        class10 modelo = new class10(); //Se crea una instancia
+        
+        //Se llama al metodo y se envian los datos
+        modelo.serieFibonacci(cantidad);
+        
+        //Se imprimen los resultados
+        System.out.println("LOS 50 TERMINOS DE LA SERIE DE FIBONACCI: ");
+        
+        //Bucle para imprimir el array
+        for (long elemento : modelo.serie) {
+            System.out.println(elemento);
+        }
     }
     
 }
